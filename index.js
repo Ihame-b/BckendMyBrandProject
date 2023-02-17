@@ -37,13 +37,13 @@ const swaggerDocs = swaggerJSDoc(swaggerOptions)
 
 app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerDocs));
 
-// app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(spaces))
-
 app.use("/b", routesblogs)
 app.use("/u", routesusers)
 app.use("/c", routescomments)
 app.use("/c", routescontacts)
 app.use("/l", routeslike)
+
+res.json({ message: "Welcome to My Brand API" })
 
 mongose.connect("mongodb+srv://Gilbert:g7E8YNV7vNfQ-6L@atlascluster.ll9z7ue.mongodb.net/?retryWrites=true&w=majority", ()=> console.log("connected mongodb"))
 const port = 4000
