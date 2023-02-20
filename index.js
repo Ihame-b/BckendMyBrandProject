@@ -1,5 +1,7 @@
 const express = require("express")
 const swaggerUI = require("swagger-ui-express")
+// import cors from 'cors'
+const cors = require("cors");
 const swaggerJSDoc = require("swagger-jsdoc")
 const routesblogs = require("./src/blogs/routes/routes")
 const routesusers = require("./src/user/routes/routes")
@@ -42,6 +44,8 @@ app.use("/u", routesusers)
 app.use("/c", routescomments)
 app.use("/c", routescontacts)
 app.use("/l", routeslike)
+app.use(cors());
+// app.use(cors())
 
 // res.json({ message: "Welcome to My Brand API" })
 
